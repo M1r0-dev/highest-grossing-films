@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest-Grossing Films | Interactive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Highest-Grossing Films of All Time</h1>
+            <p>Interactive dashboard with filtering and sorting capabilities</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search by title, director, or country...">
+            </div>
+            
+            <div class="filters">
+                <select id="yearFilter">
+                    <option value="all">All Years</option>
+                </select>
+                
+                <select id="countryFilter">
+                    <option value="all">All Countries</option>
+                </select>
+                
+                <select id="sortBy">
+                    <option value="box_office_desc">Sort by Revenue (High to Low)</option>
+                    <option value="box_office_asc">Sort by Revenue (Low to High)</option>
+                    <option value="year_desc">Sort by Year (Newest First)</option>
+                    <option value="year_asc">Sort by Year (Oldest First)</option>
+                    <option value="title_asc">Sort by Title (A-Z)</option>
+                </select>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Total Films</div>
+                    <div class="stat-value" id="totalFilms">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Revenue</div>
+                    <div class="stat-value" id="totalRevenue">$0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Average Revenue</div>
+                    <div class="stat-value" id="avgRevenue">$0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="films-grid" id="filmsGrid">
+            <div class="loading">Loading films data...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
